@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="text-center text-xs mt-2">
+    <footer className="text-center text-xs">
       Challenge by <a className="text-bright-blue font-bold" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a className="text-bright-blue font-bold" href="https://github.com/flaviare1s" target="_blank">Flávia Reis</a>.
     </footer>
