@@ -19,12 +19,6 @@ export default {
         'linear-gradient-1': 'hsl(192, 100%, 67%)',
         'linear-gradient-2': 'hsl(280, 87%, 65%)',
       },
-      backgroundImage: {
-        'bg-desktop-light': "url('/bg-desktop-light.jpg')",
-        'bg-desktop-dark': "url('/bg-desktop-dark.jpg')",
-        'bg-mobile-light': "url('/bg-mobile-light.jpg')",
-        'bg-mobile-dark': "url('/bg-mobile-dark.jpg')",
-      },
       screens: {
         'tablet': '376px',
       },
