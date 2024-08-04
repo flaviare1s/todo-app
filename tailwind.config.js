@@ -20,10 +20,10 @@ export default {
         'linear-gradient-2': 'hsl(280, 87%, 65%)',
       },
       backgroundImage: {
-        'bg-desktop-light': "url('./assets/images/bg-desktop-light.jpg')",
-        'bg-desktop-dark': "url('./assets/images/bg-desktop-dark.jpg')",
-        'bg-mobile-light': "url('./assets/images/bg-mobile-light.jpg')",
-        'bg-mobile-dark': "url('./assets/images/bg-mobile-dark.jpg')",
+        'bg-desktop-light': "url('/assets/images/bg-desktop-light.jpg')",
+        'bg-desktop-dark': "url('/assets/images/bg-desktop-dark.jpg')",
+        'bg-mobile-light': "url('/assets/images/bg-mobile-light.jpg')",
+        'bg-mobile-dark': "url('/assets/images/bg-mobile-dark.jpg')",
       },
       screens: {
         'tablet': '376px',
