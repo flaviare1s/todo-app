@@ -15,15 +15,15 @@ export function App() {
 
   return (
     <>
-      <div className='relative h-screen'>
+      <div className='relative'>
        <Background mode={mode} />
         <main className='flex flex-col px-[26px] pt-12 md:pt-[70px] w-full sm:w-[540px] m-auto absolute top-0 left-1/2 -translate-x-1/2'>
           <Header mode={mode} changeMode={changeMode} />
           <NewTodo />
           <Todos />
+          <Footer />
         </main>
       </div>
-      <Footer />
     </>
   )
 }
