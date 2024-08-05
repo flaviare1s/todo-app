@@ -65,9 +65,9 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
         </div>
       </section>
       <div className={`h-12 flex justify-evenly rounded-[5px] font-bold items-center text-xs md:text-base mt-4  shadow-sm ${mode === 'light' ? 'bg-white text-dark-grayish-blue' : 'bg-dark-mode-input text-very-dark-grayish-blue'}`}>
-          <button onClick={() => changeFilter('all')} className='hover:text-bright-blue'>All</button>
-          <button onClick={() => changeFilter('active')} className='hover:text-bright-blue'>Active</button>
-          <button onClick={() => changeFilter('completed')} className='hover:text-bright-blue'>Completed</button>
+          <button onClick={() => changeFilter('all')} className={`${filter === 'all' ? 'text-bright-blue' : ''}`}>All</button>
+          <button onClick={() => changeFilter('active')} className={`${filter === 'active' ? 'text-bright-blue' : ''}`}>Active</button>
+          <button onClick={() => changeFilter('completed')} className={`${filter === 'completed' ? 'text-bright-blue' : ''}`}>Completed</button>
         </div>
         <p className={`text-center text-sm md:text-base my-10 ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>Drag and drop to reorder list</p>
     </>
