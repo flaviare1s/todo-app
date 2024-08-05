@@ -1,33 +1,38 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import checkIcon from '../images/icon-check.svg'
 import crossIcon from '../images/icon-cross.svg'
 import axios from 'axios'
 
 export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
   const [filter, setFilter] = useState('all')
+  const [filteredTodos, setFilteredTodos] = useState([])
 
   const toggleStatus = async (id, currentStatus) => {
     try {
       const newStatus = currentStatus === 'active' ? 'completed' : 'active'
       await axios.put(`http://localhost:3000/todos/${id}`, { status: newStatus })
       setTodos(todos.map(todo => todo.id === id ? { ...todo, status: newStatus } : todo))
+      fetchTodos()
     } catch (error) {
       console.error(error)
     }
   }
 
-  const filteredTodos = todos.filter((todo) => {
-    if (filter === 'all') return true
-    if (filter === 'active') return todo.status === 'active'
-    if (filter === 'completed') return todo.status === 'completed'
-    return false
-  })
+  useEffect(() => {
+    setFilteredTodos(todos.filter(todo => {
+      if (filter === 'all') return true
+      if (filter === 'active') return todo.status === 'active'
+      if (filter === 'completed') return todo.status === 'completed'
+      return false
+    }))
+  }, [todos, filter])
 
   const deleteTodo = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/todos/${id}`)
       setTodos(todos.filter(todo => todo.id !== id))
+      fetchTodos()
     } catch (error) {
       console.error(error)
     }
@@ -49,7 +54,7 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
   return (
     <>
       <section className={`rounded-[5px] mt-[16px] shadow-sm ${mode === 'light' ? 'bg-white' : 'bg-dark-mode-input'}`}>
-        {todos.map((todo) => (
+        {filteredTodos.map((todo) => (
           <div key={todo.id} className={`px-5 p-4 md:p-5 flex justify-between items-center border-b ${mode === 'light' ? 'border-light-grayish-blue' : 'border-very-dark-grayish-blue'}`}>
             <div className='flex items-center'>
               <button onClick={() => toggleStatus(todo.id, todo.status)} className={`h-5 w-5 border ${mode === 'light' ? 'border-light-grayish-blue' : 'border-very-dark-grayish-blue'} rounded-full relative ${todo.status === 'completed' ? 'bg-gradient-to-r from-linear-gradient-1 to-linear-gradient-2' : ''}`}></button>
