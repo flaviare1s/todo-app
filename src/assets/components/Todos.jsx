@@ -3,20 +3,9 @@ import { useState } from 'react'
 import checkIcon from '../images/icon-check.svg'
 import crossIcon from '../images/icon-cross.svg'
 import axios from 'axios'
-import { useEffect } from 'react'
 
-export const Todos = ({ mode }) => {
-  const [todos, setTodos] = useState([])
+export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
   const [filter, setFilter] = useState('all')
-
-  const fetchTodos = async () => {
-    try {
-      const response = await axios.get('http://localhost:3000/todos')
-      setTodos(response.data)
-    } catch (error) {
-      console.error(error)
-    }
-  }
 
   const toggleStatus = async (id, currentStatus) => {
     try {
@@ -56,10 +45,6 @@ export const Todos = ({ mode }) => {
   const changeFilter = (newFilter) => {
     setFilter(newFilter)
   }
-
-  useEffect(() => {
-    fetchTodos()
-  }, [])
 
   return (
     <>
