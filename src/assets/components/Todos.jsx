@@ -1,8 +1,25 @@
-import { todos } from '../../../todoData.json'
+// import { todos } from '../../../todoData.json'
+import { useState } from 'react'
 import checkIcon from '../images/icon-check.svg'
 import crossIcon from '../images/icon-cross.svg'
+import axios from 'axios'
+import { useEffect } from 'react'
 
 export const Todos = ({ mode }) => {
+  const [todos, setTodos] = useState([])
+
+  useEffect(() => {
+    const fetchTodos = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/todos')
+        setTodos(response.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchTodos()
+  }, [])
 
   return (
     <>
