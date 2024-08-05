@@ -59,12 +59,21 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
             <button onClick={() => deleteTodo(todo.id)}><img className='h-3' src={crossIcon} alt="cross" /></button>
           </div>
         ))}
-        <div className={`h-12 flex justify-around items-center text-xs md:text-base ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>
+        <div className={`h-12 flex justify-around items-center text-xs md:hidden ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>
           <span>{filteredTodos.length} items left</span>
           <button onClick={clearCompleted}>Clear Completed</button>
         </div>
+        <div className={`hidden md:flex justify-around items-center text-sm font-bold h-12 ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>
+          <span>{filteredTodos.length} items left</span>
+          <div className='flex justify-center gap-5'>
+            <button onClick={() => changeFilter('all')} className={`${filter === 'all' ? 'text-bright-blue' : ''}`}>All</button>
+            <button onClick={() => changeFilter('active')} className={`${filter === 'active' ? 'text-bright-blue' : ''}`}>Active</button>
+            <button onClick={() => changeFilter('completed')} className={`${filter === 'completed' ? 'text-bright-blue' : ''}`}>Completed</button>
+          </div>
+          <button onClick={clearCompleted}>Clear Completed</button>
+        </div>
       </section>
-      <div className={`h-12 flex justify-evenly rounded-[5px] font-bold items-center text-xs md:text-base mt-4  shadow-sm ${mode === 'light' ? 'bg-white text-dark-grayish-blue' : 'bg-dark-mode-input text-very-dark-grayish-blue'}`}>
+      <div className={`h-12 flex justify-evenly rounded-[5px] font-bold items-center text-xs md:text-base mt-4 shadow-sm md:hidden ${mode === 'light' ? 'bg-white text-dark-grayish-blue' : 'bg-dark-mode-input text-very-dark-grayish-blue'}`}>
           <button onClick={() => changeFilter('all')} className={`${filter === 'all' ? 'text-bright-blue' : ''}`}>All</button>
           <button onClick={() => changeFilter('active')} className={`${filter === 'active' ? 'text-bright-blue' : ''}`}>Active</button>
           <button onClick={() => changeFilter('completed')} className={`${filter === 'completed' ? 'text-bright-blue' : ''}`}>Completed</button>
