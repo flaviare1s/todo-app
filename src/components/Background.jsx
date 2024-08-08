@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import bgDesktopLight from '../images/bg-desktop-light.jpg'
-import bgDesktopDark from '../images/bg-desktop-dark.jpg'
-import bgMobileLight from '../images/bg-mobile-light.jpg'
-import bgMobileDark from '../images/bg-mobile-dark.jpg'
+import bgDesktopLight from '../assets/images/bg-desktop-light.jpg'
+import bgDesktopDark from '../assets/images/bg-desktop-dark.jpg'
+import bgMobileLight from '../assets/images/bg-mobile-light.jpg'
+import bgMobileDark from '../assets/images/bg-mobile-dark.jpg'
 
 export const Background = ({ mode }) => {
   return (

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import lightMode from '../../assets/images/icon-sun.svg'
-import darkMode from '../../assets/images/icon-moon.svg'
+import lightMode from '../assets/images/icon-sun.svg'
+import darkMode from '../assets/images/icon-moon.svg'
 
 export const Header = ({ mode, changeMode }) => {
   return (

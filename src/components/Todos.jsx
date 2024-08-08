@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react'
-import checkIcon from '../images/icon-check.svg'
-import crossIcon from '../images/icon-cross.svg'
+import checkIcon from '../assets/images/icon-check.svg'
+import crossIcon from '../assets/images/icon-cross.svg'
 import axios from 'axios'
 
 export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
