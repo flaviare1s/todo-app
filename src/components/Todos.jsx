@@ -75,12 +75,12 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
           <span>{filteredTodos.length} items left</span>
           <button className={`${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`} onClick={clearCompleted}>Clear Completed</button>
         </div>
-        <div className={`hidden md:flex justify-around items-center text-sm font-bold h-12 ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>
+        <div className={`hidden md:flex justify-around items-center text-sm h-12 ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>
           <span>{filteredTodos.length} items left</span>
           <div className='flex justify-center gap-5'>
-            <button onClick={() => changeFilter('all')} className={`${filter === 'all' ? 'text-bright-blue' : ''} ${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`}>All</button>
-            <button onClick={() => changeFilter('active')} className={`${filter === 'active' ? 'text-bright-blue' : ''} ${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`}>Active</button>
-            <button onClick={() => changeFilter('completed')} className={`${filter === 'completed' ? 'text-bright-blue' : ''} ${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`}>Completed</button>
+            <button onClick={() => changeFilter('all')} className={`font-bold ${filter === 'all' ? 'text-bright-blue' : ''} ${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`}>All</button>
+            <button onClick={() => changeFilter('active')} className={`font-bold ${filter === 'active' ? 'text-bright-blue' : ''} ${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`}>Active</button>
+            <button onClick={() => changeFilter('completed')} className={`font-bold ${filter === 'completed' ? 'text-bright-blue' : ''} ${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`}>Completed</button>
           </div>
           <button className={`${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`} onClick={clearCompleted}>Clear Completed</button>
         </div>
