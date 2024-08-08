@@ -90,7 +90,7 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
           <button onClick={() => changeFilter('active')} className={`${filter === 'active' ? 'text-bright-blue' : ''} ${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`}>Active</button>
           <button onClick={() => changeFilter('completed')} className={`${filter === 'completed' ? 'text-bright-blue' : ''} ${mode === 'light' ? ' hover:text-very-dark-grayish-blue' :  'hover:text-light-grayish-blue'}`}>Completed</button>
         </div>
-        <p className={`text-center text-sm md:text-base my-10 ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>Drag and drop to reorder list</p>
+        {/* <p className={`text-center text-sm md:text-base mb-10 ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>Drag and drop to reorder list</p> */}
     </>
   )
 }
