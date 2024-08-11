@@ -60,7 +60,7 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
               <button onClick={() => toggleStatus(todo.id, todo.status)} className={`h-5 w-5 border pr-[19px] ${mode === 'light' ? 'border-light-grayish-blue' : 'border-very-dark-grayish-blue'} rounded-full relative ${todo.status === 'completed' ? 'bg-gradient-to-r from-linear-gradient-1 to-linear-gradient-2' : ''}`}></button>
               {todo.status === 'completed' && <img className='absolute p-1 pointer-events-none' src={checkIcon} alt="check" />}
               {mode === 'light' && 
-              <button className={`px-3 text-xs md:text-base text-very-dark-grayish-blue ${todo.status === 'completed' ? 'text-very-light-grayish-blue line-through' : ''}`}>
+              <button className={`pl-3 pr-4 text-xs md:text-base text-very-dark-grayish-blue ${todo.status === 'completed' ? 'text-very-light-grayish-blue line-through' : ''}`}>
               {todo.title}
               </button>}
               {mode === 'dark' && 
@@ -68,7 +68,7 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
               {todo.title}
             </button>}
             </div>
-            <button onClick={() => deleteTodo(todo.id)}><img className='h-3' src={crossIcon} alt="cross" /></button>
+            <button className='w-3' onClick={() => deleteTodo(todo.id)}><img className='h-3 w-full' src={crossIcon} alt="cross" /></button>
           </div>
         ))}
         <div className={`h-12 flex justify-around items-center text-xs md:hidden ${mode === 'light' ? 'text-dark-grayish-blue' : 'text-very-dark-grayish-blue'}`}>
