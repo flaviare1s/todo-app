@@ -57,7 +57,7 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
         {filteredTodos.map((todo) => (
           <div key={todo.id} className={`px-5 p-4 md:p-5 flex justify-between items-center border-b ${mode === 'light' ? 'border-light-grayish-blue' : 'border-very-dark-grayish-blue'}`}>
             <div className='flex items-center'>
-              <button onClick={() => toggleStatus(todo.id, todo.status)} className={`h-5 w-5 border ${mode === 'light' ? 'border-light-grayish-blue' : 'border-very-dark-grayish-blue'} rounded-full relative ${todo.status === 'completed' ? 'bg-gradient-to-r from-linear-gradient-1 to-linear-gradient-2' : ''}`}></button>
+              <button onClick={() => toggleStatus(todo.id, todo.status)} className={`h-5 w-5 border pr-[19px] ${mode === 'light' ? 'border-light-grayish-blue' : 'border-very-dark-grayish-blue'} rounded-full relative ${todo.status === 'completed' ? 'bg-gradient-to-r from-linear-gradient-1 to-linear-gradient-2' : ''}`}></button>
               {todo.status === 'completed' && <img className='absolute p-1 pointer-events-none' src={checkIcon} alt="check" />}
               {mode === 'light' && 
               <button className={`px-3 text-xs md:text-base text-very-dark-grayish-blue ${todo.status === 'completed' ? 'text-very-light-grayish-blue line-through' : ''}`}>
