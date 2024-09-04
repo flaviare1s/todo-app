@@ -7,6 +7,8 @@ import { NewTodo } from './components/NewTodo'
 import { Todos } from './components/Todos'
 import { Toaster } from 'react-hot-toast'
 import axios from 'axios'
+import { url } from "../utils/url"
+
 
 export function App() {
   const [mode, setMode] = useState('light')
@@ -14,7 +16,7 @@ export function App() {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/todos')
+      const response = await axios.get(`${url}/todos`)
       setTodos(response.data)
     } catch (error) {
       console.error(error)

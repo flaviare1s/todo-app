@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import checkIcon from '../assets/images/icon-check.svg'
 import crossIcon from '../assets/images/icon-cross.svg'
 import axios from 'axios'
+import { url } from "../../utils/url"
+
 
 export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
   const [filter, setFilter] = useState('all')
@@ -11,7 +13,7 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
   const toggleStatus = async (id, currentStatus) => {
     try {
       const newStatus = currentStatus === 'active' ? 'completed' : 'active'
-      await axios.put(`http://localhost:3000/todos/${id}`, { status: newStatus })
+      await axios.put(`${url}/todos/${id}`, { status: newStatus })
       setTodos(todos.map(todo => todo.id === id ? { ...todo, status: newStatus } : todo))
       fetchTodos()
     } catch (error) {
@@ -30,7 +32,7 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/todos/${id}`)
+      await axios.delete(`${url}/todos/${id}`)
       setTodos(todos.filter(todo => todo.id !== id))
       fetchTodos()
     } catch (error) {
@@ -40,7 +42,7 @@ export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {
 
   const clearCompleted = async () => {
     try {
-      await axios.delete('http://localhost:3000/todos/completed')
+      await axios.delete(`${url}/todos/completed`)
       fetchTodos()
     } catch (error) {
       console.error(error)

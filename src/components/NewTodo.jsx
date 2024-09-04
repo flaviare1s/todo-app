@@ -2,6 +2,7 @@
 import axios from "axios"
 import { useState } from "react"
 import toast from "react-hot-toast"
+import { url } from "../../utils/url"
 export const NewTodo = ({ mode, fetchTodos }) => {
   const [title, setTitle] = useState('')
 
@@ -10,7 +11,7 @@ export const NewTodo = ({ mode, fetchTodos }) => {
     const trimedTitle = title.trim()
     if (!trimedTitle) return
     try {
-      await axios.post('http://localhost:3000/todos', { title, status: 'active' })
+      await axios.post(`${url}/todos`, { title, status: 'active' })
       setTitle('')
       fetchTodos()
       toast.success('Todo created')
