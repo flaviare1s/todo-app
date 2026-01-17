@@ -2,7 +2,7 @@
 import axios from "axios"
 import { useState } from "react"
 import toast from "react-hot-toast"
-import { url } from "../../utils/url"
+const url = import.meta.env.VITE_API_URL
 export const NewTodo = ({ mode, fetchTodos }) => {
   const [title, setTitle] = useState('')
 

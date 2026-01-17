@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import checkIcon from '../assets/images/icon-check.svg'
 import crossIcon from '../assets/images/icon-cross.svg'
 import axios from 'axios'
-import { url } from "../../utils/url"
+const url = import.meta.env.VITE_API_URL
 
 
 export const Todos = ({ mode, todos, setTodos, fetchTodos }) => {

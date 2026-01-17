@@ -7,7 +7,7 @@ import { NewTodo } from './components/NewTodo'
 import { Todos } from './components/Todos'
 import { Toaster } from 'react-hot-toast'
 import axios from 'axios'
-import { url } from "../utils/url"
+const url = import.meta.env.VITE_API_URL
 
 
 export function App() {
